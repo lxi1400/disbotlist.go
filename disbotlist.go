@@ -31,7 +31,7 @@ func (client DisBotListClient) ServerCountPost(servers string)  string {
 		return ""
 	}
 
-  defer r.Body.Close()
+  	defer r.Body.Close()
 
 	body, err := ioutil.ReadAll(r.Body)
 
@@ -47,7 +47,7 @@ func (client DisBotListClient) ServerCountPost(servers string)  string {
 
 func (client DisBotListClient) HasVoted(id string) string {
 
-  req, err := http.NewRequest("GET", fmt.Sprintf("https://disbots.xyz/api/bots/check/%s", id),  nil)
+  	req, err := http.NewRequest("GET", fmt.Sprintf("https://disbots.xyz/api/bots/check/%s", id),  nil)
 
 	if err != nil {
 		return ""
@@ -59,11 +59,11 @@ func (client DisBotListClient) HasVoted(id string) string {
 	r, err := httpClient.Do(req)
 
 
-  if err != nil {
-      return ""
-  }
+  	if err != nil {
+    		return ""
+  	}
 
-  defer r.Body.Close()
+  	defer r.Body.Close()
 
 
 	body, err := ioutil.ReadAll(r.Body)
@@ -89,11 +89,11 @@ func (client DisBotListClient) Search(id string) string {
 	r, err := httpClient.Do(req)
 
 
-  if err != nil {
-      return ""
-  }
+	if err != nil {
+    		return ""
+  	}
 
-  defer r.Body.Close()
+  	defer r.Body.Close()
 
 	body, err := ioutil.ReadAll(r.Body)
 
